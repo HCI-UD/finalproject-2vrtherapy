@@ -32,7 +32,8 @@ public class ResetDots : MonoBehaviour
             else if (task == "SquareTask")
             {
                 Debug.Log("<reset_dots><START> Square Task");
-                colorChangerScriptList = transform.GetChild(0).GetComponentsInChildren<changeColorOnEnter>();
+                //colorChangerScriptList = transform.GetChild(0).GetComponentsInChildren<changeColorOnEnter>();
+                colorChangerScriptList = transform.GetChild(2).GetComponentsInChildren<changeColorOnEnter>();
             }
 
             if (taskControllerScript == null)

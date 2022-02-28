@@ -141,7 +141,8 @@ public class MenuScript : MonoBehaviour, IPointerClickHandler
         squareTask.SetActive(true);
         Vector3 squarePosition = new Vector3(-0.038f, 1.38f, 1.33f);
         squareTask.transform.position = squarePosition;
-        GameObject.Find("square_dots1").transform.position = new Vector3(-0.038f, 1.38f, 1.33f);
+        // GameObject.Find("square_dots1").transform.position = new Vector3(-0.038f, 1.38f, 1.33f);
+        GameObject.Find("square_dots_edit").transform.position = new Vector3(-0.038f, 1.38f, 1.33f);
         squareTask.transform.eulerAngles = new Vector3(0, 90, 0);
 
         threeDfishButton.transform.position = new Vector3(0f, -50f, 0f);
