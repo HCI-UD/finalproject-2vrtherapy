@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: ff792cde1b72ea44e9817e142d553447
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Aller
+  fontNames:
+  - Aller
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 7e5c86513c6b75f41ab305177fc1f044, type: 3}
+  - {fileID: 12800000, guid: 121628679db4cfd4cbd5f6ec01469549, type: 3}
+  - {fileID: 12800000, guid: efad793803ccf984c853d2a73d53549e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,31 @@
+This project uses the following items from Poly (http://poly.google.com):
+
+Title: Butterfly Fish
+Author: Device Lab
+URL: https://poly.google.com/view/6GI8TpO3yJj
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Paintbrush
+Author: Poly by Google
+URL: https://poly.google.com/view/cEH5v5HWqt9
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Simple VR HMD
+Author: Aaron Clifford
+URL: https://poly.google.com/view/aG7h3TTjc51
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: Terrain rough
+Author: Miguelangelo Rosario
+URL: https://poly.google.com/view/2vy4gFPKZMl
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode
+
+Title: 김새힘
+Author: 세형
+URL: https://poly.google.com/view/66sAL4DuuqN
+License: Creative Commons CC-BY
+https://creativecommons.org/licenses/by/3.0/legalcode

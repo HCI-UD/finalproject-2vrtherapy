@@ -1,0 +1,4 @@
+Animated and static versions
+Construction:
+MASH network with curve deformation
+FBX or Maya files can be imported into Unity
