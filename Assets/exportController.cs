@@ -32,6 +32,6 @@ public class exportController : MonoBehaviour
     {
         //Write the coords to a file
         System.IO.File.WriteAllText(filePath, coordinates);
-        Debug.Log("export controller stop");
+        Debug.Log("export controller stop " + filePath);
     }
 }

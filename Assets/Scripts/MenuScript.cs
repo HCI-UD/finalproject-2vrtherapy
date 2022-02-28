@@ -106,8 +106,8 @@ public class MenuScript : MonoBehaviour, IPointerClickHandler
         chickenButton.transform.position = new Vector3(0f, -50f, 0f);
         squareButton.transform.position = new Vector3(0f, -50f, 0f);
 
-        TaskCounterScript.restart();
         TaskCounterScript.currentTask = "FishTask";
+        TaskCounterScript.restart();
         ResetDotsScript = FishTask.GetComponent<ResetDots>();
         ResetDotsScript.task = TaskCounterScript.currentTask;
         ResetDotsScript.Start();
@@ -128,8 +128,8 @@ public class MenuScript : MonoBehaviour, IPointerClickHandler
         chickenButton.transform.position = new Vector3(0f, -50f, 0f);
         squareButton.transform.position = new Vector3(0f, -50f, 0f);
 
-        TaskCounterScript.restart();
         TaskCounterScript.currentTask = "ChickenTask";
+        TaskCounterScript.restart();
         ResetDotsScript = chickenTask.GetComponent<ResetDots>();
         ResetDotsScript.task = TaskCounterScript.currentTask;
         ResetDotsScript.Start();
@@ -149,8 +149,8 @@ public class MenuScript : MonoBehaviour, IPointerClickHandler
         chickenButton.transform.position = new Vector3(0f, -50f, 0f);
         squareButton.transform.position = new Vector3(0f, -50f, 0f);
 
-        TaskCounterScript.restart();
         TaskCounterScript.currentTask = "SquareTask";
+        TaskCounterScript.restart();
         ResetDotsScript = squareTask.GetComponent<ResetDots>();
         ResetDotsScript.task = TaskCounterScript.currentTask;
         ResetDotsScript.Start();
@@ -171,8 +171,8 @@ public class MenuScript : MonoBehaviour, IPointerClickHandler
         chickenButton.transform.position = new Vector3(0f, -50f, 0f);
         squareButton.transform.position = new Vector3(0f, -50f, 0f);
 
-        TaskCounterScript.restart();
         TaskCounterScript.currentTask = "ThreeDFishTask";
+        TaskCounterScript.restart();
         ResetDotsScript = ThreeDFishTask.GetComponent<ResetDots>();
         ResetDotsScript.task = TaskCounterScript.currentTask;
         ResetDotsScript.Start();

@@ -57,14 +57,17 @@ public class TaskController : MonoBehaviour
             $"recordingcoolbeans_{startTime}_taskTracking");
         
     }
+    */
 
     private void Update()
     {
+        /*
         Debug.Log("Update " + _framesSinceLastSave);
         _framesSinceLastSave += 1;
+        */
+        //Debug.Log("task controller: " + totalTasks + tasksAchieved);
     }
 
-*/
 
     public void LockTransformToController()
     {
