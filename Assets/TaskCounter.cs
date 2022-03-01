@@ -118,29 +118,27 @@ public class TaskCounter : MonoBehaviour
                 
                 if (taskControllerScript.tasksAchieved == totalInt && success == 0 && unlockVictory == true)
                 {
-                    Debug.Log("VICTORY");
                     victory.Play(true);
                     victoryObj.transform.position = new Vector3(0, 0, 0);
 
                     if (currentTask == "FishTask" || currentTask == "ThreeDFishTask")
                     {
-                       // taskControllerScript.reset = true;
-                       // taskControllerScript.HorizontalTransform();
+                        Debug.Log("VICTORY FISH");
                         victoryFish.SetActive(true);
+                        victoryFish.transform.position = new Vector3(-0.038f, 1.38f, 1.33f);
                         fishDots.transform.position = new Vector3(0f, -50f, 0f);
                         threeDfishDots.transform.position = new Vector3(0f, -50f, 0f);
                     }
                     else if (currentTask == "ChickenTask")
                     {
-                        //taskControllerScript.reset = true;
-                        //taskControllerScript.HorizontalTransform();
+                        Debug.Log("VICTORY CHICKEN");
                         victoryChick.SetActive(true);
+                        victoryChick.transform.position = new Vector3(-0.038f, 1.38f, 1.33f);
                         chickDots.transform.position = new Vector3(0f, -50f, 0f);
                     }
                     else if (currentTask == "SquareTask")
                     {
-                        //taskControllerScript.reset = true;
-                        //taskControllerScript.HorizontalTransform();
+                        Debug.Log("VICTORY SQUARE");
                         victorySquare.SetActive(true);
                         victorySquare.transform.position = new Vector3(-0.038f, 1.38f, 1.33f);
                         Renderer[] childrenR = victorySquare.GetComponentsInChildren<Renderer>();

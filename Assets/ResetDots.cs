@@ -11,7 +11,6 @@ public class ResetDots : MonoBehaviour
 
     public void Start()
     {
-        Debug.Log("<reset_dots><START> task = " + task);
         if (task != null) 
         {
             if (task == "ChickenTask")
@@ -53,7 +52,7 @@ public class ResetDots : MonoBehaviour
 
             colorScript.ResetToRed();
         }
-       // Debug.Log("Completed resetting all " + colorChangerScriptList.Length + " points for " + task + "!");
+        Debug.Log("Completed resetting all " + colorChangerScriptList.Length + " points for " + task + "!");
         // transform.GetChild(0).gameObject.SetActive(false);
         //  transform.GetChild(1).gameObject.SetActive(true);
         taskControllerScript.tasksAchieved = 0;

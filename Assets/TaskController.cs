@@ -14,7 +14,6 @@ public class TaskController : MonoBehaviour
     [HideInInspector]
     public List<string> taskObservations;
     private const string taskHeaderWithTime = "time_ms,pos_x,pos_y,pos_z,rot_x,rot_y,rot_z\n";
-    //public bool reset = false;
     public string task = "";
 
 
@@ -76,9 +75,9 @@ public class TaskController : MonoBehaviour
         {
             //offsets for square model (rotation is off)
             transform.eulerAngles = new Vector3(0, 90, 0);
-            transform.position = new Vector3(otherController.transform.position.x-0.25f, otherController.transform.position.y-0.5f, otherController.transform.position.z);
+            transform.position = new Vector3(otherController.transform.position.x-0.09f, otherController.transform.position.y-0.25f, otherController.transform.position.z);
             transform.eulerAngles = new Vector3(0, 90, 0);
-            //Debug.Log("rotate square " + transform.position + transform.rotation+transform.eulerAngles+transform.rotation.eulerAngles);
+            Debug.Log("rotate square " + transform.position + transform.rotation+transform.eulerAngles+transform.rotation.eulerAngles);
         }
         else
         {
@@ -93,34 +92,11 @@ public class TaskController : MonoBehaviour
 
     public void HorizontalTransform()
     {
-       // Debug.Log("HORIZONTAL " + transform.position + " / " + transform.rotation);
-
-        /*when they finish the task make sure it is reverted back to vertical
-            if (reset)
-            {
-            reset = false;
-            /*
-                if (task.Equals("SquareTask"))
-                {
-                    transform.eulerAngles = new Vector3(0, 90, 0);
-                    reset = false;
-                    Debug.Log("HORIZONTAL reset square" + transform.position + " / " + transform.rotation);
-                }
-                else
-                {
-                    transform.eulerAngles = new Vector3(0, otherController.transform.rotation.y, otherController.transform.rotation.z);
-                    reset = false;
-                     Debug.Log("HORIZONTAL reset not square" + transform.position + " / " + transform.rotation);
-                }
-            }
-            else
-            {
-        */
                 //pressed trackpad to go horizontal
                 if (task.Equals("SquareTask"))
                 {
                     transform.eulerAngles = new Vector3(0, 90, 90);
-                    transform.position = new Vector3(otherController.transform.position.x-0.5f, otherController.transform.position.y + 0.2f, otherController.transform.position.z);
+                    transform.position = new Vector3(otherController.transform.position.x-0.09f, otherController.transform.position.y + 0.1f, otherController.transform.position.z);
                     //Debug.Log("HORIZONTAL square" + transform.position + " / " + transform.rotation + transform.eulerAngles + transform.rotation.eulerAngles);
                 }
                 else
@@ -128,7 +104,6 @@ public class TaskController : MonoBehaviour
                     transform.eulerAngles = new Vector3(90, 0, 0);
                     //Debug.Log("HORIZONTAL not square" + transform.position + " / " + transform.rotation + transform.eulerAngles + transform.rotation.eulerAngles);
                 }
-            //}
     }
 } 
   
