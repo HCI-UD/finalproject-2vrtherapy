@@ -19,7 +19,7 @@ public class MenuButton : MonoBehaviour
         hover = false;
         hoverTime = 0;
         buttonImage.color = Color.white;
-        Debug.Log("<MenuButton><START> " + this.name);
+        //Debug.Log("<MenuButton><START> " + this.name);
     }
 
     // Update is called once per frame
@@ -50,9 +50,12 @@ public class MenuButton : MonoBehaviour
                     } else if (this.name == "QuitButton") {
                         Debug.Log("Application Quit");
                         Application.Quit(); //only works when you build the project (doesn't work when you play in edit mode)
+                    } else if (this.name == "TwoDsquareButton2") {
+                        Debug.Log("<MenuButton><Update> Repeatable Square button hit");
+                        menu.RepeatableSquareIntialization();
                     }
 
-                }
+            }
             }
         }
     }

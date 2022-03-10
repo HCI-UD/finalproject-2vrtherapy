@@ -14,8 +14,8 @@ public class exportController : MonoBehaviour
 
     public void restartCollection()
     {
-        Debug.Log("export controller restart" + task);
-        filePath = "D:dataCollection/exportController_" + task + "_" + System.DateTime.Now.ToString("yyyy-MM-dd_hh-mm") + ".csv"; //new name everytime played so file doesn't get overwritten
+        Debug.Log("export controller restart " + task);
+        filePath = "D:dataCollection/exportController_" + task + "_" + System.DateTime.Now.ToString("yyyy-MM-dd_hh-mm-ss") + ".csv"; //new name everytime played so file doesn't get overwritten
         //pitch is the rotation angle around the x axis, yaw is for y axis, and roll is for z axis
         //https://dcnpy7o9bh2w4.cloudfront.net/wp-content/uploads/sites/8/2018/04/02032821/HTC-Vive-Tracker-2018-Developer-Guidelines_v1.4.pdf
         coordinates = "Time, X, Y, Z, Pitch, Yaw, Roll" + System.Environment.NewLine;
@@ -24,7 +24,7 @@ public class exportController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        coordinates+= System.DateTime.Now.ToString("hh:mm:ss") + "," + transform.localPosition.x + "," + transform.localPosition.y + "," + transform.localPosition.z + "," + transform.rotation.eulerAngles.x + "," + transform.rotation.eulerAngles.y +  "," + transform.rotation.eulerAngles.z + System.Environment.NewLine;
+        coordinates+= System.DateTime.Now.ToString("hh:mm:ss.ffff tt") + "," + transform.localPosition.x + "," + transform.localPosition.y + "," + transform.localPosition.z + "," + transform.rotation.eulerAngles.x + "," + transform.rotation.eulerAngles.y +  "," + transform.rotation.eulerAngles.z + System.Environment.NewLine;
         //Debug.Log("export controller update");
     }
 

@@ -43,7 +43,7 @@ public class changeColorOnEnter : MonoBehaviour
         mMaterial = GetComponent<Renderer>().material;
         mMaterial.color = pre;
         hasBeenGreened = false;
-        Debug.Log("<changeColorOnEnter><Reset> " + mMaterial + "color: " + mMaterial.color);
+       // Debug.Log("<changeColorOnEnter><Reset> " + mMaterial + "color: " + mMaterial.color);
     }
 
     // Update is called once per frame
@@ -69,7 +69,7 @@ public class changeColorOnEnter : MonoBehaviour
 
                 taskControllerScript.tasksAchieved += 1;
                 //document a dot was hit in the other script
-                exportHitsScript.coordinates += transform.name.Substring(transform.name.Length - 3) + "," + System.DateTime.Now.ToString("hh:mm:ss") + "," + System.DateTime.Now.ToString("yyyy/MM/dd") + System.Environment.NewLine;
+                exportHitsScript.coordinates += transform.name.Substring(transform.name.Length - 3) + "," + System.DateTime.Now.ToString("HH:mm:ss.ffff tt") + "," + System.DateTime.Now.ToString("yyyy/MM/dd") + System.Environment.NewLine;
 
                 if (taskControllerScript.tasksAchieved == taskControllerScript.totalTasks)
                 {
@@ -83,7 +83,7 @@ public class changeColorOnEnter : MonoBehaviour
 
     private void AddObservationToList()
     {
-        Debug.Log("<changeColorOnEnter><AddObservationToList> AddingObservationToList defined by " + taskControllerScript);
+       // Debug.Log("<changeColorOnEnter><AddObservationToList> AddingObservationToList defined by " + taskControllerScript);
         var x = RecordTrackedAlias.Tracked6DString(aliasControllerScript.controllerR.transform);
         var timeString = RecordTrackedAlias.GameMillisToString();
         var combinedObservation = timeString + "," + x;

@@ -16,12 +16,14 @@ public class MenuScript : MonoBehaviour, IPointerClickHandler
 
     public GameObject squareTask;
     public GameObject squareButton;
-    
+    public GameObject squareButton2;
+
     public GameObject afterMenu1;
     public GameObject afterMenu2;
 
     private TaskCounter TaskCounterScript;
     private ResetDots ResetDotsScript;
+    private SpecialTaskCounter SpecialTaskCounterScript;
 
     public void Start()
     {
@@ -50,8 +52,11 @@ public class MenuScript : MonoBehaviour, IPointerClickHandler
 
         fishButton.transform.position = new Vector3(0.064833f, 1.651885f, 0.394774f);
         chickenButton.transform.position = new Vector3(0.064833f, 1.13798f, 0.394774f);
-        squareButton.transform.position = new Vector3(0.064833f, 2.216545f, 0.394774f);
+        //squareButton.transform.position = new Vector3(0.064833f, 2.216545f, 0.394774f);
+        squareButton.transform.position = new Vector3(-1.45f, 2.216545f, 0.394774f);
         threeDfishButton.transform.position = new Vector3(0.064833f, 0.597109f, 0.394774f);
+        squareButton2.transform.position = new Vector3(1.45f, 2.216545f, 0.394774f);
+
 
         afterMenu1.transform.position = new Vector3(0f, -50f, 0f);
         afterMenu2.transform.position = new Vector3(0f, -50f, 0f);
@@ -72,8 +77,10 @@ public class MenuScript : MonoBehaviour, IPointerClickHandler
 
         fishButton.transform.position = new Vector3(0.064833f, 1.651885f, 0.394774f);
         chickenButton.transform.position = new Vector3(0.064833f, 1.13798f, 0.394774f);
-        squareButton.transform.position = new Vector3(0.064833f, 2.216545f, 0.394774f);
+        //squareButton.transform.position = new Vector3(0.064833f, 2.216545f, 0.394774f);
+        squareButton.transform.position = new Vector3(-1.45f, 2.216545f, 0.394774f);
         threeDfishButton.transform.position = new Vector3(0.064833f, 0.597109f, 0.394774f);
+        squareButton2.transform.position = new Vector3(1.45f, 2.216545f, 0.394774f);
 
         afterMenu1.transform.position = new Vector3(0f, -50f, 0f);
         afterMenu2.transform.position = new Vector3(0f, -50f, 0f);
@@ -105,6 +112,7 @@ public class MenuScript : MonoBehaviour, IPointerClickHandler
         fishButton.transform.position = new Vector3(0f, -50f, 0f);
         chickenButton.transform.position = new Vector3(0f, -50f, 0f);
         squareButton.transform.position = new Vector3(0f, -50f, 0f);
+        squareButton2.transform.position = new Vector3(0f, -50f, 0f);
 
         TaskCounterScript.currentTask = "FishTask";
         TaskCounterScript.restart();
@@ -127,6 +135,7 @@ public class MenuScript : MonoBehaviour, IPointerClickHandler
         fishButton.transform.position = new Vector3(0f, -50f, 0f);
         chickenButton.transform.position = new Vector3(0f, -50f, 0f);
         squareButton.transform.position = new Vector3(0f, -50f, 0f);
+        squareButton2.transform.position = new Vector3(0f, -50f, 0f);
 
         TaskCounterScript.currentTask = "ChickenTask";
         TaskCounterScript.restart();
@@ -149,6 +158,7 @@ public class MenuScript : MonoBehaviour, IPointerClickHandler
         fishButton.transform.position = new Vector3(0f, -50f, 0f);
         chickenButton.transform.position = new Vector3(0f, -50f, 0f);
         squareButton.transform.position = new Vector3(0f, -50f, 0f);
+        squareButton2.transform.position = new Vector3(0f, -50f, 0f);
 
         TaskCounterScript.currentTask = "SquareTask";
         TaskCounterScript.restart();
@@ -171,6 +181,7 @@ public class MenuScript : MonoBehaviour, IPointerClickHandler
         fishButton.transform.position = new Vector3(0f, -50f, 0f);
         chickenButton.transform.position = new Vector3(0f, -50f, 0f);
         squareButton.transform.position = new Vector3(0f, -50f, 0f);
+        squareButton2.transform.position = new Vector3(0f, -50f, 0f);
 
         TaskCounterScript.currentTask = "ThreeDFishTask";
         TaskCounterScript.restart();
@@ -178,5 +189,31 @@ public class MenuScript : MonoBehaviour, IPointerClickHandler
         ResetDotsScript.task = TaskCounterScript.currentTask;
         ResetDotsScript.Start();
         ResetDotsScript.ResetAllDots();
+    }
+
+    public void RepeatableSquareIntialization()
+    {
+        squareTask.SetActive(true);
+        Vector3 squarePosition = new Vector3(-0.038f, 1.38f, 1.33f);
+        squareTask.transform.position = squarePosition;
+        // GameObject.Find("square_dots1").transform.position = new Vector3(-0.038f, 1.38f, 1.33f);
+        GameObject.Find("square_dots_edit").transform.position = new Vector3(-0.038f, 1.38f, 1.33f);
+        squareTask.transform.eulerAngles = new Vector3(0, 90, 0);
+
+        threeDfishButton.transform.position = new Vector3(0f, -50f, 0f);
+        fishButton.transform.position = new Vector3(0f, -50f, 0f);
+        chickenButton.transform.position = new Vector3(0f, -50f, 0f);
+        squareButton.transform.position = new Vector3(0f, -50f, 0f);
+        squareButton2.transform.position = new Vector3(0f, -50f, 0f);
+
+        SpecialTaskCounterScript = GameObject.Find("Progress Text (TMP)").GetComponent<SpecialTaskCounter>();
+        SpecialTaskCounterScript.Start();
+        SpecialTaskCounterScript.currentTask = "SquareTask";
+        SpecialTaskCounterScript.restart();
+        ResetDotsScript = squareTask.GetComponent<ResetDots>();
+        ResetDotsScript.task = SpecialTaskCounterScript.currentTask;
+        ResetDotsScript.Start();
+        ResetDotsScript.ResetAllDots();
+        SpecialTaskCounterScript.ResetDotsScript = ResetDotsScript;
     }
 }

@@ -9,7 +9,7 @@ public class exportHits : MonoBehaviour
     public void startCollection()
     {
         Debug.Log("Export Hits started");
-        filePath = "D:dataCollection/exportHits_" + task + "_" + System.DateTime.Now.ToString("yyyy-MM-dd_hh-mm") + ".csv";
+        filePath = "D:dataCollection/exportHits_" + task + "_" + System.DateTime.Now.ToString("yyyy-MM-dd_hh-mm-ss") + ".csv";
         coordinates = "Cylinder #, Time Hit, Date" + System.Environment.NewLine;
     }
 

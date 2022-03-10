@@ -6,16 +6,10 @@ public class collectCoordinates : MonoBehaviour
 {
     public string task;
 
-    // Start is called before the first frame update
-    public void Start()
-    {
-        Debug.Log("collect coordinates start");
-    }
-
     //only done once per level, not continuously collecting
     public void collect()
     {
-        string filePath = "D:dataCollection/exportModel_"  + task + "_" + System.DateTime.Now.ToString("yyyy-MM-dd_hh-mm") + ".csv";
+        string filePath = "D:dataCollection/exportModel_"  + task + "_" + System.DateTime.Now.ToString("yyyy-MM-dd_hh-mm-ss") + ".csv";
         string coordinates = "Time collected, Cylinder #, X, Y, Z, Pitch, Yaw, Roll" + System.Environment.NewLine;
         SphereCollider[] cylinders;
 

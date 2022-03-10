@@ -16,6 +16,7 @@ public class TaskCounter : MonoBehaviour
     public GameObject victoryObj;
     private ParticleSystem victory;
     public GameObject victoryFish;
+    public GameObject victory3DFish;
     public GameObject victoryChick;
     public GameObject victorySquare;
     public GameObject fishDots;
@@ -24,7 +25,8 @@ public class TaskCounter : MonoBehaviour
     public GameObject threeDfishDots;
     
     private int success;
-    public bool unlockVictory; 
+    public bool unlockVictory;
+    private bool calledAlready;
 
     public GameObject afterMenu1;
     public GameObject afterMenu2;
@@ -40,6 +42,7 @@ public class TaskCounter : MonoBehaviour
         taskControllerScript = null;
         unlockVictory = true;
         exportControllerScript = GameObject.Find("RightControllerAlias").GetComponent<exportController>();
+        calledAlready = false;
         Debug.Log("Task Counter Started");
     }
 
@@ -51,6 +54,7 @@ public class TaskCounter : MonoBehaviour
         unlockVictory = true;
         exportControllerScript.task = currentTask;
         exportControllerScript.restartCollection();
+        calledAlready = false;
         Debug.Log("Task Counter REStarted" + success + taskControllerScript);
     }
 
@@ -102,11 +106,12 @@ public class TaskCounter : MonoBehaviour
         else
         {
             //once they commit to starting the task, the location of the model is locked in for the data collection
-            if (taskControllerScript.tasksAchieved == 1)
+            if (taskControllerScript.tasksAchieved == 1 && calledAlready == false)
             {
                 collectCoordsScript = GameObject.Find(currentTask).GetComponent<collectCoordinates>();
                 collectCoordsScript.task = currentTask;
                 collectCoordsScript.collect();
+                calledAlready = true; //frames update too fast and this gets called more than once while theres only one dot hit
             }
 
             //Debug.Log("TC ELSE " + taskControllerScript.tasksAchieved + "out of "+totalInt);
@@ -121,12 +126,23 @@ public class TaskCounter : MonoBehaviour
                     victory.Play(true);
                     victoryObj.transform.position = new Vector3(0, 0, 0);
 
-                    if (currentTask == "FishTask" || currentTask == "ThreeDFishTask")
+                    if (currentTask == "FishTask")
                     {
                         Debug.Log("VICTORY FISH");
                         victoryFish.SetActive(true);
                         victoryFish.transform.position = new Vector3(-0.038f, 1.38f, 1.33f);
                         fishDots.transform.position = new Vector3(0f, -50f, 0f);
+                    }
+                    else if (currentTask == "ThreeDFishTask")
+                    {
+                        Debug.Log("VICTORY 3D FISH");
+                        victory3DFish.SetActive(true);
+                        Renderer[] childrenR = victorySquare.GetComponentsInChildren<Renderer>();
+                        foreach (var ch in childrenR)
+                        {
+                            ch.material.color = Color.magenta;
+                        }
+                        victory3DFish.transform.position = new Vector3(-0.038f, 1.38f, 1.33f);
                         threeDfishDots.transform.position = new Vector3(0f, -50f, 0f);
                     }
                     else if (currentTask == "ChickenTask")
@@ -166,6 +182,7 @@ public class TaskCounter : MonoBehaviour
         {
             exportControllerScript.Stop();
             victoryFish.SetActive(false);
+            victory3DFish.SetActive(false);
             victoryChick.SetActive(false);
             victorySquare.SetActive(false);
             victory.Stop(true);
