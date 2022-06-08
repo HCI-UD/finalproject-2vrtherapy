@@ -15,3 +15,10 @@ You also need to go to the Asset Store and get VRTK
 * 2D Square Repeatable- for Amit, square model that is smaller and can be played multiple times without having to go through the after menu and reselect square. Benefits include being able to perform the square task multiple times in the same position/rotation continuously without a pause. This was done by using a SpecialTaskCounter.cs script that is called in the main MenuScript.cs
 * Horizontal Model- if you press the left trackpad (big circle button) it flips any of the levels horizontally. The code is in TaskController.cs and is called from the LeftControllerAlias game object.
 * Square and Chicken Models - before, you were not able to play these but I've made them responsive to the game by adding change color on enter scripts and colliders to each dot in the models. 
+
+# Data Collection Sleeve
+* download the Data Streamer extension in Microsoft Excel
+* connect to device (plug in device with USB then turn on switch)
+* start/stop collection to reveal settings tab at the bottom. here you can customize # of rows you need and how fast data is being collected
+* you must copy and paste the data from each trial (select all rows and paste into a new excel once you stop data collection). you cannot save the file before you start collecting data again. 
+* With the data, you can select and insert a graph of it to visualize the spikes in elbow extension. 
